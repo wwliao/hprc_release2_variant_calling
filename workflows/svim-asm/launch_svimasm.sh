@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --job-name=launch_nextflow
-#SBATCH --output=launch_nextflow-%j.out
+#SBATCH --job-name=launch_svimasm
+#SBATCH --output=launch_svimasm-%j.out
 #SBATCH --partition=pi_hall
 #SBATCH --constraint=nogpu
 #SBATCH --cpus-per-task=2
