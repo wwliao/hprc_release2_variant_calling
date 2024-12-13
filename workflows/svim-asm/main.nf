@@ -100,7 +100,7 @@ workflow {
 
     SAMTOOLS_SORT_INDEX.out
         .map { sample, hap_id, bam, bai -> tuple(sample, tuple(hap_id, bam, bai)) }
-        .groupTuple(by: 0)
+        .groupTuple(by: 0, size: 2)
         .map { sample, hap_bams ->
             def sorted_hap_bams = hap_bams.sort { it[0] } // Sort by hap ID
             tuple(sample, sorted_hap_bams[0][1], sorted_hap_bams[0][2], sorted_hap_bams[1][1], sorted_hap_bams[1][2])
