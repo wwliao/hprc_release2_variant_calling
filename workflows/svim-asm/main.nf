@@ -67,7 +67,7 @@ process BCFTOOLS_SORT_INDEX {
 }
 
 workflow {
-	Channel
+    Channel
         .fromPath(params.sample_sheet)
         .splitCsv(header:true)
         .map { row -> 
