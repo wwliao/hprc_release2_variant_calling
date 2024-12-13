@@ -16,9 +16,9 @@ REF_KMERS="repetitive_k19.txt"
 OUTDIR="results"
 
 nextflow run main.nf \
-	-ansi-log false \
-	-profile mccleary \
+    -ansi-log false \
+    -profile mccleary \
     --sample_sheet ${SAMPLE_SHEET} \
-	--ref_fasta ${REF_FASTA} \
-	--ref_kmers ${REF_KMERS} \
-	--outdir ${OUTDIR}
+    --ref_fasta ${REF_FASTA} \
+    --ref_kmers ${REF_KMERS} \
+    --outdir ${OUTDIR}
