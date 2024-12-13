@@ -67,17 +67,30 @@ process BCFTOOLS_SORT_INDEX {
 }
 
 workflow {
-    Channel
-        .fromPath(params.sample_sheet)
-        .splitCsv(header:true)
-        .map { row -> tuple(row.sample, 'hap1', file(row.hap1)) }
-        .mix(
-            Channel
-                .fromPath(params.sample_sheet)
-                .splitCsv(header:true)
-                .map { row -> tuple(row.sample, 'hap2', file(row.hap2)) }
-        )
-        .set { samples_ch }
+	Channel
+		.fromPath(params.sample_sheet)
+		.splitCsv(header:true)
+		.map { row -> 
+			[
+				[sample: row.sample, hap_id: 'hap1', hap_fasta: file(row.hap1)],
+				[sample: row.sample, hap_id: 'hap2', hap_fasta: file(row.hap2)]
+			]
+		}
+		.flatten()
+		.map { it -> tuple(it.sample, it.hap_id, it.hap_fasta) }
+		.set { samples_ch }
+
+    //Channel
+    //    .fromPath(params.sample_sheet)
+    //    .splitCsv(header:true)
+    //    .map { row -> tuple(row.sample, 'hap1', file(row.hap1)) }
+    //    .mix(
+    //        Channel
+    //            .fromPath(params.sample_sheet)
+    //            .splitCsv(header:true)
+    //            .map { row -> tuple(row.sample, 'hap2', file(row.hap2)) }
+    //    )
+    //    .set { samples_ch }
 
     // Align a haplotype to the reference genome using winnowmap
     WINNOWMAP(samples_ch, params.ref_fasta, params.ref_kmers)
