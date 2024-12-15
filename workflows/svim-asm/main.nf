@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
 
-process WINNOWMAP {
+process WINNOWMAP_ASM {
     tag "${sample}_${hap_id}"
 
     input:
@@ -81,10 +81,10 @@ workflow {
         .set { samples_ch }
 
     // Align a haplotype to the reference genome using winnowmap
-    WINNOWMAP(samples_ch, params.ref_fasta, params.ref_kmers)
+    WINNOWMAP_ASM(samples_ch, params.ref_fasta, params.ref_kmers)
 
     // Sort a SAM file into a BAM file and generate a BAI index file
-    SAMTOOLS_SORT_INDEX(WINNOWMAP.out)
+    SAMTOOLS_SORT_INDEX(WINNOWMAP_ASM.out)
 
     SAMTOOLS_SORT_INDEX.out
         .map { sample, hap_id, bam, bai -> tuple(sample, tuple(hap_id, bam, bai)) }
