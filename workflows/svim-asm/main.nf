@@ -13,7 +13,7 @@ process WINNOWMAP_ASM {
 
     script:
     """
-    winnowmap -W ${ref_kmers} -a -x asm5 --cs -r2k -t ${task.cpus} ${ref_fasta} ${hap_fasta} > ${sample}_${hap_id}.${ref_fasta.simpleName}.sam
+    winnowmap -W ${ref_kmers} -a -x asm5 --cs -r 2k -t ${task.cpus} ${ref_fasta} ${hap_fasta} > ${sample}_${hap_id}.${ref_fasta.simpleName}.sam
     """
 }
 
