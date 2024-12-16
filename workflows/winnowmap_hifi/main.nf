@@ -79,8 +79,6 @@ workflow {
     // Combine converted FASTQ and original FASTQ
     SAMTOOLS_FASTQ.out
         .mix(branches_ch.fastq)
-        .toSortedList { a, b -> a[0] <=> b[0] }  // Sort by sample name
-        .flatMap()
         .set { fastqs_ch }
    
     // Align all FASTQ files to reference using winnowmap
