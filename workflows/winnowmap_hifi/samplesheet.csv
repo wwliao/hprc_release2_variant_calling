@@ -1,0 +1,8 @@
+sample,hifi
+HG00001,/data/HG00001/raw_data/PacBio_HiFi/HG00001.m54329U_200201_234567.dc.q20.fastq.gz
+HG00001,/data/HG00001/raw_data/PacBio_HiFi/HG00001.m54329U_200201_343111.dc.q20.fastq.gz
+HG00001,/data/HG00001/raw_data/PacBio_HiFi/HG00001.m84046_230724_201234_s1.hifi_reads.bc2055.bam
+HG00001,/data/HG00001/raw_data/PacBio_HiFi/HG00001.m84046_230724_203222_s4.hifi_reads.bc2055.bam
+HG01123,/data/HG01123/raw_data/PacBio_HiFi/HG01123.m54329U_200201_111111.dc.q20.fastq.gz
+HG01123,/data/HG01123/raw_data/PacBio_HiFi/HG01123.m54329U_200201_343433.dc.q20.fastq.gz
+HG01123,/data/HG01123/raw_data/PacBio_HiFi/HG01123.m84046_230724_203319_s4.hifi_reads.bc2055.bam
