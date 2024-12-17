@@ -19,14 +19,15 @@ process WINNOWMAP_HIFI {
     tag "${fastq}"
     
     input:
-    tuple val(sample), path(fastq)
+    tuple val(key), path(fastq)
     path ref_fasta
     path ref_kmers
     
     output:
-    tuple val(sample), val(run_id), path("${sample}.${run_id}.${ref_fasta.simpleName}.bam")
+    tuple val(key), val(run_id), path("${sample}.${run_id}.${ref_fasta.simpleName}.bam")
     
     script:
+    sample = key.getGroupTarget()
     parts = fastq.name.split('\\.')
     if (parts.size() < 2) {
         error "Unable to extract run_id from filename: ${fastq.name}"
@@ -39,7 +40,6 @@ process WINNOWMAP_HIFI {
     """
 }
 
-// Module to sort and merge BAM files
 process SAMTOOLS_MERGE_SORT {
     tag "${sample}"
     publishDir params.outdir, mode: 'copy'
@@ -61,8 +61,14 @@ workflow {
     // Read the sample sheet
     Channel
         .fromPath(params.sample_sheet)
-        .splitCsv(header:true)
+        .splitCsv(header: true)
         .map { row -> tuple(row.sample, file(row.hifi)) }
+        .groupTuple(by: 0)
+        .flatMap { sample, hifis ->
+            hifis.collect { hifi ->
+                tuple(groupKey(sample, hifis.size()), hifi)
+            }
+        }
         .set { samples_ch }
    
     // Separate BAM and FASTQ files
@@ -86,11 +92,11 @@ workflow {
     
     // Group aligned BAM files by sample and sort by run ID
     WINNOWMAP_HIFI.out
-        .map { sample, run_id, bam -> tuple(sample, tuple(run_id, bam)) }
+        .map { key, run_id, bam -> tuple(key, tuple(run_id, bam)) }
         .groupTuple(by: 0)
-        .map { sample, files -> 
+        .map { key, files -> 
             tuple(
-                sample,
+                key.getGroupTarget(),
                 files.sort { a, b -> a[0] <=> b[0] }.collect { it[1] }
             )
         }
