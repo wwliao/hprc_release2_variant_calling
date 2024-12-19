@@ -9,11 +9,11 @@ process WINNOWMAP_ASM {
     path ref_kmers
 
     output:
-    tuple val(sample), val(hap_id), path("${sample}_${hap_id}.${ref_fasta.simpleName}.sam")
+    tuple val(sample), val(hap_id), path("${sample}_${hap_id}.${ref_fasta.baseName}.sam")
 
     script:
     """
-    winnowmap -W ${ref_kmers} -a -x asm5 --cs -r 2k -t ${task.cpus} ${ref_fasta} ${hap_fasta} > ${sample}_${hap_id}.${ref_fasta.simpleName}.sam
+    winnowmap -W ${ref_kmers} -a -x asm5 --cs -r 2k -t ${task.cpus} ${ref_fasta} ${hap_fasta} > ${sample}_${hap_id}.${ref_fasta.baseName}.sam
     """
 }
 
@@ -41,12 +41,12 @@ process SVIMASM_DIPLOID {
     path ref_fasta
 
     output:
-    tuple val(sample), path("${sample}.${ref_fasta.simpleName}.svim-asm.vcf")
+    tuple val(sample), path("${sample}.${ref_fasta.baseName}.svim-asm.vcf")
 
     script:
     """
     svim-asm diploid --interspersed_duplications_as_insertions --sample ${sample} ${sample}_svimasm_results ${bam1} ${bam2} ${ref_fasta}
-    mv ${sample}_svimasm_results/variants.vcf ${sample}.${ref_fasta.simpleName}.svim-asm.vcf
+    mv ${sample}_svimasm_results/variants.vcf ${sample}.${ref_fasta.baseName}.svim-asm.vcf
     """
 }
 
