@@ -24,7 +24,7 @@ process WINNOWMAP_HIFI {
     path ref_kmers
     
     output:
-    tuple val(key), val(run_id), path("${sample}.${run_id}.${ref_fasta.simpleName}.bam")
+    tuple val(key), val(run_id), path("${sample}.${run_id}.${ref_fasta.baseName}.bam")
     
     script:
     sample = key.getGroupTarget()
@@ -36,7 +36,7 @@ process WINNOWMAP_HIFI {
     rg_id = (run_id + "//CCS").md5().substring(0, 8)
 
     """
-    winnowmap -W ${ref_kmers} -t ${task.cpus} -R "@RG\\tID:${rg_id}\\tPL:PACBIO\\tDS:READTYPE=CCS\\tPU:${run_id}\\tSM:${sample}" -x map-pb -a -Y -L --eqx --cs ${ref_fasta} ${fastq} | samtools sort -m 4G -@ ${task.cpus} -o ${sample}.${run_id}.${ref_fasta.simpleName}.bam
+    winnowmap -W ${ref_kmers} -t ${task.cpus} -R "@RG\\tID:${rg_id}\\tPL:PACBIO\\tDS:READTYPE=CCS\\tPU:${run_id}\\tSM:${sample}" -x map-pb -a -Y -L --eqx --cs ${ref_fasta} ${fastq} | samtools sort -m 4G -@ ${task.cpus} -o ${sample}.${run_id}.${ref_fasta.baseName}.bam
     """
 }
 
@@ -49,11 +49,11 @@ process SAMTOOLS_MERGE_SORT {
     path ref_fasta
     
     output:
-    tuple val(sample), path("${sample}.${ref_fasta.simpleName}.sorted.bam"), path("${sample}.${ref_fasta.simpleName}.sorted.bam.bai")
+    tuple val(sample), path("${sample}.${ref_fasta.baseName}.sorted.bam"), path("${sample}.${ref_fasta.baseName}.sorted.bam.bai")
     
     script:
     """
-    samtools merge -@ ${task.cpus} - ${bams} | samtools sort -m 4G -@ ${task.cpus} --write-index -o ${sample}.${ref_fasta.simpleName}.sorted.bam##idx##${sample}.${ref_fasta.simpleName}.sorted.bam.bai -
+    samtools merge -@ ${task.cpus} - ${bams} | samtools sort -m 4G -@ ${task.cpus} --write-index -o ${sample}.${ref_fasta.baseName}.sorted.bam##idx##${sample}.${ref_fasta.baseName}.sorted.bam.bai -
     """
 }
 
