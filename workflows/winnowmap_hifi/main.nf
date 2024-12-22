@@ -11,7 +11,7 @@ process SAMTOOLS_FASTQ {
     
     script:
     """
-    samtools fastq -@ ${task.cpus} -0 ${bam.baseName}.fastq.gz ${bam}
+    samtools fastq -@ ${task.cpus} -T MM,ML -0 ${bam.baseName}.fastq.gz ${bam}
     """
 }
 
@@ -36,7 +36,7 @@ process WINNOWMAP_HIFI {
     rg_id = (run_id + "//CCS").md5().substring(0, 8)
 
     """
-    winnowmap -W ${ref_kmers} -t ${task.cpus} -R "@RG\\tID:${rg_id}\\tPL:PACBIO\\tDS:READTYPE=CCS\\tPU:${run_id}\\tSM:${sample}" -x map-pb -a -Y -L --eqx --cs ${ref_fasta} ${fastq} | samtools sort -m 4G -@ ${task.cpus} -o ${sample}.${run_id}.${ref_fasta.baseName}.bam
+    winnowmap -W ${ref_kmers} -t ${task.cpus} -R "@RG\\tID:${rg_id}\\tPL:PACBIO\\tDS:READTYPE=CCS\\tPU:${run_id}\\tSM:${sample}" -x map-pb -a -Y -L -y --eqx --cs ${ref_fasta} ${fastq} | samtools sort -m 4G -@ ${task.cpus} -o ${sample}.${run_id}.${ref_fasta.baseName}.bam
     """
 }
 
