@@ -42,7 +42,6 @@ process WINNOWMAP_HIFI {
 
 process SAMTOOLS_MERGE_SORT {
     tag "${sample}"
-    publishDir params.outdir, mode: 'copy'
     
     input:
     tuple val(sample), path(bams)
