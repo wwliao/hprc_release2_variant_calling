@@ -61,7 +61,7 @@ workflow {
     Channel
         .fromPath(params.sample_sheet)
         .splitCsv(header: true)
-        .map { row -> tuple(row.sample, path(row.hifi)) }
+        .map { row -> tuple(row.sample, file(row.hifi)) }
         .groupTuple(by: 0)
         .flatMap { sample, hifis ->
             hifis.collect { hifi ->
@@ -87,7 +87,7 @@ workflow {
         .set { fastqs_ch }
    
     // Align all FASTQ files to reference using winnowmap
-    WINNOWMAP_HIFI(fastqs_ch, path(params.ref_fasta), path(params.ref_kmers))
+    WINNOWMAP_HIFI(fastqs_ch, file(params.ref_fasta), file(params.ref_kmers))
     
     // Group aligned BAM files by sample and sort by run ID
     WINNOWMAP_HIFI.out
@@ -102,5 +102,5 @@ workflow {
         .set { grouped_bams_ch }
     
     // Merge and sort BAM files for each sample
-    SAMTOOLS_MERGE_SORT(grouped_bams_ch, path(params.ref_fasta))
+    SAMTOOLS_MERGE_SORT(grouped_bams_ch, file(params.ref_fasta))
 }

@@ -72,8 +72,8 @@ workflow {
         .splitCsv(header:true)
         .map { row -> 
             [
-                [sample: row.sample, hap_id: 'hap1', hap_fasta: path(row.hap1)],
-                [sample: row.sample, hap_id: 'hap2', hap_fasta: path(row.hap2)]
+                [sample: row.sample, hap_id: 'hap1', hap_fasta: file(row.hap1)],
+                [sample: row.sample, hap_id: 'hap2', hap_fasta: file(row.hap2)]
             ]
         }
         .flatten()
@@ -81,7 +81,7 @@ workflow {
         .set { samples_ch }
 
     // Align a haplotype to the reference genome using winnowmap
-    WINNOWMAP_ASM(samples_ch, path(params.ref_fasta), path(params.ref_kmers))
+    WINNOWMAP_ASM(samples_ch, file(params.ref_fasta), file(params.ref_kmers))
 
     // Sort a SAM file into a BAM file and generate a BAI index file
     SAMTOOLS_SORT_INDEX(WINNOWMAP_ASM.out)
@@ -96,7 +96,7 @@ workflow {
         .set { grouped_bams_ch }
 
     // Call structural variants from diploid genome-genome alignments
-    SVIMASM_DIPLOID(grouped_bams_ch, path(params.ref_fasta))
+    SVIMASM_DIPLOID(grouped_bams_ch, file(params.ref_fasta))
 
     // Sort a VCF file into a compressed VCF file and generate a TBI index file
     BCFTOOLS_SORT_INDEX(SVIMASM_DIPLOID.out)
