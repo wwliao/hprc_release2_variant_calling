@@ -1,0 +1,3 @@
+sample,sex,bam,bai
+HG00097,female,/vast/palmer/pi/hall/wl474/projects/hprc_r2/variant_calling/winnowmap_hifi/batch1/results/HG00097.GRCh38_no_alt.sorted.bam,/vast/palmer/pi/hall/wl474/projects/hprc_r2/variant_calling/winnowmap_hifi/batch1/results/HG00097.GRCh38_no_alt.sorted.bam.bai
+HG00126,male,/vast/palmer/pi/hall/wl474/projects/hprc_r2/variant_calling/winnowmap_hifi/batch1/results/HG00126.GRCh38_no_alt.sorted.bam,/vast/palmer/pi/hall/wl474/projects/hprc_r2/variant_calling/winnowmap_hifi/batch1/results/HG00126.GRCh38_no_alt.sorted.bam.bai
