@@ -12,7 +12,7 @@ process PBSV_DISCOVER {
     
     script:
     """
-    pbsv discover --hifi --sample ${sample} --tandem-repeats ${ref_trf} --min-mapq 5 ${bam} ${sample}.${ref_trf.simpleName}.svsig.gz
+    pbsv discover --hifi --sample ${sample} --min-mapq 5 --tandem-repeats ${ref_trf} ${bam} ${sample}.${ref_trf.simpleName}.svsig.gz
     """
 }
 
