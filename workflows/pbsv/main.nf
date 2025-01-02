@@ -12,7 +12,7 @@ process PBSV_DISCOVER {
     
     script:
     """
-    pbsv discover --hifi --sample ${sample} --tandem-repeats ${ref_trf} ${bam} ${sample}.${ref_trf.simpleName}.svsig.gz
+    pbsv discover --hifi --sample ${sample} --tandem-repeats ${ref_trf} --min-mapq 5 ${bam} ${sample}.${ref_trf.simpleName}.svsig.gz
     """
 }
 
@@ -28,7 +28,7 @@ process PBSV_CALL {
     
     script:
     """
-    pbsv call --hifi --preserve-non-acgt --min-sv-length 40 --num-threads ${task.cpus} ${ref_fasta} ${svsig} ${sample}.${ref_fasta.simpleName}.pbsv.vcf
+    pbsv call --hifi --preserve-non-acgt --min-sv-length 30 --num-threads ${task.cpus} ${ref_fasta} ${svsig} ${sample}.${ref_fasta.simpleName}.pbsv.vcf
     """
 }
 
