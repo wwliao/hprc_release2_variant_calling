@@ -6,6 +6,7 @@ process SNIFFLES {
     input:
     tuple val(sample), path(bam), path(bai)
     path ref_fasta
+    path ref_fai
     path ref_trf
     
     output:
@@ -25,5 +26,5 @@ workflow {
         .map { row -> tuple(row.sample, file(row.bam), file(row.bai)) }
         .set { samples_ch }
 
-    SNIFFLES(samples_ch, file(params.ref_fasta), file(params.ref_trf))
+    SNIFFLES(samples_ch, file(params.ref_fasta), file(params.ref_fai), file(params.ref_trf))
 }

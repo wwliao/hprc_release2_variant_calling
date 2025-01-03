@@ -12,6 +12,7 @@ module load Nextflow/24.04.4
 
 SAMPLE_SHEET="samplesheet.csv"
 REF_FASTA="/gpfs/gibbs/pi/ycgh/wl474/resources/reference_genomes/GRCh38_no_alt/GRCh38_no_alt.fa"
+REF_FAI="/gpfs/gibbs/pi/ycgh/wl474/resources/reference_genomes/GRCh38_no_alt/GRCh38_no_alt.fa.fai"
 REF_TRF="/gpfs/gibbs/pi/ycgh/wl474/resources/reference_genomes/GRCh38_no_alt/GRCh38_no_alt.TRF.bed"
 OUTDIR="results"
 
@@ -20,5 +21,6 @@ nextflow run main.nf \
     -profile mccleary \
     --sample_sheet ${SAMPLE_SHEET} \
     --ref_fasta ${REF_FASTA} \
+    --ref_fai ${REF_FAI} \
     --ref_trf ${REF_TRF} \
     --outdir ${OUTDIR}
