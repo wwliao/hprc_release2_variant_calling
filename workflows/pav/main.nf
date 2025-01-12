@@ -23,7 +23,7 @@ process PAV {
     ${sample}\t${hap1}\t${hap2}
     EOF
 
-    /opt/pav/files/docker/run -c ${task.cpus}
+    /opt/pav/files/docker/run --notemp -c ${task.cpus}
     mv ${sample}.vcf.gz ${sample}.${ref_fasta.simpleName}.pav.vcf.gz
     mv ${sample}.vcf.gz.tbi ${sample}.${ref_fasta.simpleName}.pav.vcf.gz.tbi
     """
