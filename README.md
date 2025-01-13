@@ -39,3 +39,42 @@ The table below summarizes the current status for each variant caller:
   2. Updated `legendHandles` to `legend_handles` for Matplotlib compatibility.
 
   The modified version can be found in [my GitHub repository](https://github.com/wwliao/svim).
+
+## Reference Genomes
+
+We provide two reference genome packages: [`GRCh38_no_alt.zip`](https://drive.google.com/uc?id=10bh1CEv0ifHVv9nNHTXI0TlChiN7Bj6D) and [`CHM13v2.zip`](https://drive.google.com/uc?id=1XECM8XeWVLY3NZsYvCBM6ipU7GJ-trbW). Each package contains all necessary files for variant calling workflows.
+
+### File Structure
+
+After extracting `GRCh38_no_alt.zip` or `CHM13v2.zip`, you will find the following files:
+
+- **`<reference>.fa`**: The FASTA file containing the reference genome.
+- **`<reference>.fa.fai`**: Index file for the FASTA reference genome.
+- **`<reference>.PAR.bed`**: BED file specifying pseudo-autosomal regions (PARs).
+- **`<reference>.expected_cn.XX.bed`**: BED file for expected copy numbers in female samples.
+- **`<reference>.expected_cn.XY.bed`**: BED file for expected copy numbers in male samples.
+- **`<reference>.TRF.bed`**: BED file annotating tandem repeats.
+- **`repetitive_k15.txt`**: Text file listing repetitive k-mers (k=15) pre-computed using [meryl](https://github.com/marbl/meryl).
+- **`repetitive_k19.txt`**: Text file listing repetitive k-mers (k=19) pre-computed using [meryl](https://github.com/marbl/meryl).
+
+Replace `<reference>` with `GRCh38_no_alt` or `CHM13v2`, depending on the genome package you are using.
+
+### GRCh38\_no\_alt.fa
+
+The `GRCh38_no_alt.fa` file is derived from [`GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz`](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz). It was decompressed and renamed to `GRCh38_no_alt.fa`. This version:
+
+- Excludes ALT contigs.
+- Has the PARs on chrY hard-masked.
+- Uses the rCRS mitochondrial sequence.
+- Includes the Epstein-Barr Virus (EBV) sequence.
+
+For more details, see Heng Li’s blog post: [_Which human reference genome to use?_](https://lh3.github.io/2017/11/13/which-human-reference-genome-to-use).
+
+### CHM13v2.fa
+
+The `CHM13v2.fa` file is derived from [`chm13v2.0_maskedY_rCRS.fa.gz`](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0_maskedY_rCRS.fa.gz). It was decompressed, modified to include the EBV sequence, and renamed to `CHM13v2.fa`. This version:
+
+- Has the PARs on chrY hard-masked.
+- Uses the rCRS mitochondrial sequence.
+- Includes the EBV sequence.
+
