@@ -17,16 +17,16 @@ The table below summarizes the current status for each variant caller:
 | Caller               | GRCh38\_no\_alt | CHM13v2         |
 | ---:                 | ---:            | ---:            |
 | Dipcall (v0.3)       | 216/216         | 216/216         |
-| PAV (v2.4.6)         |   ?/216         |   ?/216         |
+| PAV (v2.4.6)         | 216/216         | 216/216         |
 | SVIM-asm (v1.0.3)    | 216/216         | 216/216         |
-| DeepVariant (v1.8.0) | 216/216         | Bug encountered |
-| CuteSV (v2.1.1)      | 216/216         | 196/216         |
+| DeepVariant (v1.8.0) | 216/216         | 216/216 (v1.6.1)|
+| CuteSV (v2.1.1)      | 216/216         | 216/216         |
 | DeBreak (v1.3)       |    -            |    -            |
-| Delly (v1.3.2)       | 216/216         | 196/216         |
-| PBSV (v2.10.0)       | 216/216         | 196/216         |
-| Sawfish (v0.12.8)    | 216/216         | 196/216         |
-| Sniffles (v2.5.3)    | 216/216         | 196/216         |
-| SVIM (v2.0.0)        | 216/216         | 196/216         |
+| Delly (v1.3.2)       | 216/216         | 216/216         |
+| PBSV (v2.10.0)       | 216/216         | 216/216         |
+| Sawfish (v0.12.8)    | 216/216         | 216/216         |
+| Sniffles (v2.5.3)    | 216/216         | 216/216         |
+| SVIM (v2.0.0)        | 216/216         | 216/216         |
 
 ### Notes
 
