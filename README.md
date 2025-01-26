@@ -19,9 +19,9 @@ The table below summarizes the current status for each variant caller:
 | Dipcall (v0.3)       | 216/216         | 216/216         |
 | PAV (v2.4.6)         | 216/216         | 216/216         |
 | SVIM-asm (v1.0.3)    | 216/216         | 216/216         |
-| DeepVariant (v1.8.0) | 216/216         | 216/216 (v1.6.1)|
+| DeepVariant (v1.6.1) | 216/216         | 216/216         |
 | CuteSV (v2.1.1)      | 216/216         | 216/216         |
-| DeBreak (v1.3)       |    -            |    -            |
+| DeBreak (v1.3)       | 216/216         | 216/216         |
 | Delly (v1.3.2)       | 216/216         | 216/216         |
 | PBSV (v2.10.0)       | 216/216         | 216/216         |
 | Sawfish (v0.12.8)    | 216/216         | 216/216         |
@@ -30,15 +30,13 @@ The table below summarizes the current status for each variant caller:
 
 ### Notes
 
-- A bug in **PAV (v2.4.6)** was resolved ([see issue](https://github.com/EichlerLab/pav/issues/63#issuecomment-2510950978)), and the workflow has now been initiated.
-- **DeepVariant (v1.8.0)** encountered a bug for CHM13v2 ([see issue](https://github.com/google/deepvariant/issues/912#issuecomment-2552635974)). We plan to switch to **v1.6.1** as a workaround.
-- The **DeBreak (v1.3)** workflow has not been initiated for either reference genome due to high resource requirements and excessive generation of intermediate files.
+- **DeepVariant (v1.8.0)** had a bug when used with CHM13v2 ([see issue](https://github.com/google/deepvariant/issues/912#issuecomment-2552635974)). To ensure consistency, we switched to **v1.6.1** for both reference genomes as a workaround.
 - We modified **SVIM (v2.0.0)** to fix errors:
 
   1. Replaced `scipy`'s `linkage` with `fastcluster`'s `linkage` for hierarchical clustering.
   2. Updated `legendHandles` to `legend_handles` for Matplotlib compatibility.
 
-  The modified version can be found in [my GitHub repository](https://github.com/wwliao/svim).
+  The modified version can be found in [this GitHub repository](https://github.com/wwliao/svim).
 
 ## Reference Genomes
 
