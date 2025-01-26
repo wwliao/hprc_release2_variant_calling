@@ -14,6 +14,7 @@ process DEBREAK {
     """
     debreak --thread ${task.cpus} --min_size 30 --min_support 3 --min_quality 5 --rescue_dup --rescue_large_ins --poa --ref ${ref_fasta} --outpath ${sample}_debreak_out --bam ${bam}
     mv ${sample}_debreak_out/debreak.vcf ${sample}.${ref_fasta.simpleName}.debreak.vcf
+    rm -rf ${sample}_debreak_out
     """
 }
 
