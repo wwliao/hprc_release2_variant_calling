@@ -18,7 +18,7 @@ The table below summarizes the current status for each variant caller:
 | ---:                 | ---:            | ---:            |
 | Dipcall (v0.3)       | 231/231         | 231/231         |
 | PAV (v2.4.6)         | 231/231         | 231/231         |
-| SVIM-asm (v1.0.3)    | 216/231         | 216/231         |
+| SVIM-asm (v1.0.3)    | 231/231         | 231/231         |
 | DeepVariant (v1.6.1) | 216/231         | 216/231         |
 | CuteSV (v2.1.1)      | 216/231         | 216/231         |
 | DeBreak (v1.3)       | 216/231         | 216/231         |
