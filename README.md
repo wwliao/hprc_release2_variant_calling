@@ -26,6 +26,7 @@ The table below summarizes the current status for each variant caller:
 | PBSV (v2.10.0)       | 231/231         | 231/231         |
 | Sawfish (v0.12.8)    | 231/231         | 231/231         |
 | Sniffles (v2.5.3)    | 231/231         | 231/231         |
+| SVDSS (v2.0.0)       | 231/231         | 231/231         |
 | SVIM (v2.0.0)        | 231/231         | 231/231         |
 
 ### Notes
