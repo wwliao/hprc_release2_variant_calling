@@ -28,6 +28,7 @@ The table below summarizes the current status for each variant caller:
 | Sniffles (v2.5.3)    | 231/231         | 231/231         |
 | SVDSS (v2.0.0)       | 231/231         | 231/231         |
 | SVIM (v2.0.0)        | 231/231         | 231/231         |
+| SVision-pro (v2.4)   | 231/231         | 231/231         |
 
 ### Notes
 
