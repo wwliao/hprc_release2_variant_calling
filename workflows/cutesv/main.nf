@@ -17,7 +17,7 @@ process CUTESV {
     """
 }
 
-process BCFTOOLS_SORT_INDEX {
+process BCFTOOLS_SORT {
     tag "${sample}"
 
     input:
@@ -28,7 +28,7 @@ process BCFTOOLS_SORT_INDEX {
 
     script:
     """
-    bcftools sort --write-index=tbi -Oz -o ${vcf}.gz ${vcf} 
+    bcftools view -e 'POS==0' -Ou ${vcf} | bcftools sort --write-index=tbi -Oz -o ${vcf}.gz
     """
 }
 
@@ -42,5 +42,5 @@ workflow {
 
     CUTESV(samples_ch, file(params.ref_fasta), file(params.ref_fai))
 
-    BCFTOOLS_SORT_INDEX(CUTESV.out)
+    BCFTOOLS_SORT(CUTESV.out)
 }
