@@ -16,6 +16,7 @@ The table below summarizes the current status for each variant caller:
 
 | Caller               | GRCh38\_no\_alt | CHM13v2         |
 | ---:                 | ---:            | ---:            |
+| CuteSV-asm (v2.1.1)  | 231/231         | 231/231         |
 | Dipcall (v0.3)       | 231/231         | 231/231         |
 | PAV (v2.4.6)         | 231/231         | 231/231         |
 | SVIM-asm (v1.0.3)    | 231/231         | 231/231         |
