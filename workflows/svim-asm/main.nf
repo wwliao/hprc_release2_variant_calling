@@ -13,7 +13,7 @@ process SVIMASM_DIPLOID {
 
     script:
     """
-    svim-asm diploid --min_mapq 5 --min_sv_size 30 --sample ${sample} --interspersed_duplications_as_insertions ${sample}_svimasm_results ${bam1} ${bam2} ${ref_fasta}
+    svim-asm diploid --min_mapq 5 --min_sv_size 30 --sample ${sample} --query_names --interspersed_duplications_as_insertions ${sample}_svimasm_results ${bam1} ${bam2} ${ref_fasta}
     mv ${sample}_svimasm_results/variants.vcf ${sample}.${ref_fasta.baseName}.svim-asm.vcf
     """
 }
