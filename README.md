@@ -50,7 +50,7 @@ The table below summarizes the current status for each variant caller:
 | HiFi Reads                       | List of all PacBio HiFi reads used in variant calling  | |
 | Assembly-to-Reference Alignments | List of assembly alignments to reference genomes       | |
 | HiFi-to-Reference Alignments     | List of HiFi read alignments to reference genomes      | |
-| Variant Callsets                 | List of all variant callsets generated for each sample | |
+| Variant Callsets                 | List of all variant callsets generated for each sample | [variant_callsets.index.csv](data_tables/variant_callsets.index.csv)|
 
 ## Reference Genomes
 
