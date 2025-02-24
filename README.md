@@ -44,14 +44,15 @@ The table below summarizes the current status for each variant caller:
 
 ## Reference Genomes
 
-We provide two reference genome packages: [`GRCh38_no_alt.zip`](https://drive.google.com/uc?id=10bh1CEv0ifHVv9nNHTXI0TlChiN7Bj6D) and [`CHM13v2.zip`](https://drive.google.com/uc?id=1XECM8XeWVLY3NZsYvCBM6ipU7GJ-trbW). Each package contains all necessary files for variant calling workflows.
+We provide two reference genome packages: [`GRCh38_no_alt.tar.gz`](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/40399FDD-59DE-43D1-B3A3-DFF0C6E64FAC--YALE_VARIANT_CALLS_R2/references/GRCh38_no_alt.tar.gz) and [`CHM13v2.tar.gz`](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/40399FDD-59DE-43D1-B3A3-DFF0C6E64FAC--YALE_VARIANT_CALLS_R2/references/CHM13v2.tar.gz). Each package contains all necessary files for variant calling workflows.
 
 ### File Structure
 
-After extracting `GRCh38_no_alt.zip` or `CHM13v2.zip`, you will find the following files:
+After extracting `GRCh38_no_alt.tar.gz` or `CHM13v2.tar.gz`, you will find the following files:
 
 - **`<reference>.fa`**: The FASTA file containing the reference genome.
 - **`<reference>.fa.fai`**: Index file for the FASTA reference genome.
+- **`<reference>.fmd`**: FMD index file for the FASTA reference genome.
 - **`<reference>.PAR.bed`**: BED file specifying pseudo-autosomal regions (PARs).
 - **`<reference>.expected_cn.XX.bed`**: BED file for expected copy numbers in female samples.
 - **`<reference>.expected_cn.XY.bed`**: BED file for expected copy numbers in male samples.
