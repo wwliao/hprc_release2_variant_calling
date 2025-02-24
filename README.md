@@ -42,6 +42,16 @@ The table below summarizes the current status for each variant caller:
 
   The modified version can be found in [this GitHub repository](https://github.com/wwliao/svim).
 
+## Index Files
+
+| Index Type                       | Description                                            | File Name |
+| ---:                             | ---:                                                   | ---:      |
+| Assemblies                       | List of all assemblies included in HPRC Release 2      | [assemblies_pre_release_v0.6.1.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/assemblies_pre_release_v0.6.1.index.csv) |
+| HiFi Reads                       | List of all PacBio HiFi reads used in variant calling  | |
+| Assembly-to-Reference Alignments | List of assembly alignments to reference genomes       | |
+| HiFi-to-Reference Alignments     | List of HiFi read alignments to reference genomes      | |
+| Variant Callsets                 | List of all variant callsets generated for each sample | |
+
 ## Reference Genomes
 
 We provide two reference genome packages: [`GRCh38_no_alt.tar.gz`](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/40399FDD-59DE-43D1-B3A3-DFF0C6E64FAC--YALE_VARIANT_CALLS_R2/references/GRCh38_no_alt.tar.gz) and [`CHM13v2.tar.gz`](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/40399FDD-59DE-43D1-B3A3-DFF0C6E64FAC--YALE_VARIANT_CALLS_R2/references/CHM13v2.tar.gz). Each package contains all necessary files for variant calling workflows.
