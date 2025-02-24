@@ -14,23 +14,23 @@ Variants were then called using various tools. For structural variant (SV) calle
 
 The table below summarizes the current status for each variant caller:
 
-| Caller                 | GRCh38\_no\_alt | CHM13v2         |
-| ---:                   | ---:            | ---:            |
-| CuteSV-asm (v2.1.1)    | 231/231         | 231/231         |
-| Dipcall (v0.3)         | 231/231         | 231/231         |
-| PAV (v2.4.6)           | 231/231         | 231/231         |
-| SVIM-asm (v1.0.3)      | 231/231         | 231/231         |
-| SVision-pro-asm (v2.4) | 231/231         | 231/231         |
-| DeepVariant (v1.6.1)   | 231/231         | 231/231         |
-| CuteSV (v2.1.1)        | 231/231         | 231/231         |
-| DeBreak (v1.3)         | 231/231         | 231/231         |
-| Delly (v1.3.2)         | 231/231         | 231/231         |
-| PBSV (v2.10.0)         | 231/231         | 231/231         |
-| Sawfish (v0.12.8)      | 231/231         | 231/231         |
-| Sniffles (v2.5.3)      | 231/231         | 231/231         |
-| SVDSS (v2.0.0)         | 231/231         | 231/231         |
-| SVIM (v2.0.0)          | 231/231         | 231/231         |
-| SVision-pro (v2.4)     | 231/231         | 231/231         |
+| Caller                 | Method Type     | GRCh38\_no\_alt | CHM13v2         |
+| ---:                   | ---:            | ---:            | ---:            |
+| CuteSV-asm (v2.1.1)    | Assembly-based  | 231/231         | 231/231         |
+| Dipcall (v0.3)         | Assembly-based  | 231/231         | 231/231         |
+| PAV (v2.4.6)           | Assembly-based  | 231/231         | 231/231         |
+| SVIM-asm (v1.0.3)      | Assembly-based  | 231/231         | 231/231         |
+| SVision-pro-asm (v2.4) | Assembly-based  | 231/231         | 231/231         |
+| DeepVariant (v1.6.1)   | Alignment-based | 231/231         | 231/231         |
+| CuteSV (v2.1.1)        | Alignment-based | 231/231         | 231/231         |
+| DeBreak (v1.3)         | Alignment-based | 231/231         | 231/231         |
+| Delly (v1.3.2)         | Alignment-based | 231/231         | 231/231         |
+| PBSV (v2.10.0)         | Alignment-based | 231/231         | 231/231         |
+| Sawfish (v0.12.8)      | Alignment-based | 231/231         | 231/231         |
+| Sniffles (v2.5.3)      | Alignment-based | 231/231         | 231/231         |
+| SVDSS (v2.0.0)         | Alignment-based | 231/231         | 231/231         |
+| SVIM (v2.0.0)          | Alignment-based | 231/231         | 231/231         |
+| SVision-pro (v2.4)     | Alignment-based | 231/231         | 231/231         |
 
 ### Notes
 
