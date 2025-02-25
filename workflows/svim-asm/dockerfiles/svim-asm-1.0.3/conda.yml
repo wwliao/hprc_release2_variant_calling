@@ -1,5 +1,0 @@
-channels:
-- conda-forge
-- bioconda
-dependencies:
-- bioconda::svim-asm=1.0.3
