@@ -1,6 +1,6 @@
 # Variant Calling for the HPRC Release 2
 
-This repository contains Nextflow workflows for assembly-based and HiFi-based variant calling for 231 individuals in the [Human Pangenome Reference Consortium (HPRC)](https://humanpangenome.org) Release 2. It includes workflows for aligning assemblies and HiFi reads to both GRCh38_no_alt and CHM13v2 reference genomes, as well as workflows for variant calling using multiple tools for small and structural variants. Additionally, [index files](#index-files) are provided for easy access to assemblies, HiFi reads, alignments, and variant callsets.
+This repository contains Nextflow workflows for assembly-based and HiFi-based variant calling for 231 individuals in the Human Pangenome Reference Consortium (HPRC) Release 2. It includes workflows for aligning assemblies and HiFi reads to reference genomes, as well as workflows for calling variants from these alignments using multiple tools for small and structural variants. Additionally, [index files](#index-files) are provided for easy access to assemblies, HiFi reads, alignments, and variant callsets.
 
 ## Overview
 
