@@ -66,7 +66,7 @@ aws s3 --no-sign-request cp <s3_path> .
 
 ## Reference Genomes
 
-We provide two reference genome packages: [`GRCh38_no_alt.tar.gz`](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/40399FDD-59DE-43D1-B3A3-DFF0C6E64FAC--YALE_VARIANT_CALLS_R2/references/GRCh38_no_alt.tar.gz) and [`CHM13v2.tar.gz`](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/40399FDD-59DE-43D1-B3A3-DFF0C6E64FAC--YALE_VARIANT_CALLS_R2/references/CHM13v2.tar.gz). Each package contains all necessary files for variant calling workflows.
+We provide two reference genome packages: [`GRCh38_no_alt.tar.gz`](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/40399FDD-59DE-43D1-B3A3-DFF0C6E64FAC--YALE_VARIANT_CALLS_R2/references/GRCh38_no_alt.tar.gz) and [`CHM13v2.tar.gz`](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/40399FDD-59DE-43D1-B3A3-DFF0C6E64FAC--YALE_VARIANT_CALLS_R2/references/CHM13v2.tar.gz). Each package contains all necessary files for the workflows in this repository.
 
 ### File Structure
 
