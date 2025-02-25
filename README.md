@@ -56,6 +56,14 @@ The table below summarizes the current status for each variant caller:
 | HiFi-to-Reference Alignments     | List of HiFi read alignments to reference genomes      | [hifi_alignments.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/data_tables/hifi_alignments.index.csv)|
 | Variant Callsets                 | List of all variant callsets generated for each sample | [variant_callsets.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/data_tables/variant_callsets.index.csv)|
 
+### How to Download Files
+
+To download files from the AWS S3 bucket, install the [AWS Command Line Interface (AWS CLI)](https://aws.amazon.com/cli/) if you haven't already, then run:
+
+```bash
+aws s3 --no-sign-request cp <s3_path> .
+```
+
 ## Reference Genomes
 
 We provide two reference genome packages: [`GRCh38_no_alt.tar.gz`](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/40399FDD-59DE-43D1-B3A3-DFF0C6E64FAC--YALE_VARIANT_CALLS_R2/references/GRCh38_no_alt.tar.gz) and [`CHM13v2.tar.gz`](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/40399FDD-59DE-43D1-B3A3-DFF0C6E64FAC--YALE_VARIANT_CALLS_R2/references/CHM13v2.tar.gz). Each package contains all necessary files for variant calling workflows.
