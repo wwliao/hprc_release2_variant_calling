@@ -34,13 +34,15 @@ The table below summarizes the current status for each variant caller:
 
 ### Notes
 
+- We modified `diploid_calling.py` in **CuteSV-asm (v2.1.1)** to support user-defined haplotype names. The modified version is available [here](https://github.com/wwliao/cuteSV).
 - **DeepVariant (v1.8.0)** had a bug when used with CHM13v2 ([see issue](https://github.com/google/deepvariant/issues/912#issuecomment-2552635974)). To ensure consistency, we switched to **v1.6.1** for both reference genomes as a workaround.
+- **CuteSV (v2.1.1)** occasionally reports variants with a position of zero ([see issue](https://github.com/tjiangHIT/cuteSV/issues/147)). We applied a post-processing step to remove these records before sorting to avoid issues with bcftools.
 - We modified **SVIM (v2.0.0)** to fix errors:
 
   1. Replaced `scipy`'s `linkage` with `fastcluster`'s `linkage` for hierarchical clustering.
   2. Updated `legendHandles` to `legend_handles` for Matplotlib compatibility.
 
-  The modified version can be found in [this GitHub repository](https://github.com/wwliao/svim).
+  The modified version can be found [here](https://github.com/wwliao/svim).
 
 ## Index Files
 
