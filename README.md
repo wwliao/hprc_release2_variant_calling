@@ -25,6 +25,7 @@ The table below summarizes the current status for each variant caller:
 | CuteSV (v2.1.1)        | HiFi-based     | 231/231         | 231/231 |
 | DeBreak (v1.3)         | HiFi-based     | 231/231         | 231/231 |
 | Delly (v1.3.2)         | HiFi-based     | 231/231         | 231/231 |
+| LongcallD (v0.0.3)     | HiFi-based     | 231/231         | 231/231 |
 | PBSV (v2.10.0)         | HiFi-based     | 231/231         | 231/231 |
 | Sawfish (v0.12.8)      | HiFi-based     | 231/231         | 231/231 |
 | Sniffles (v2.5.3)      | HiFi-based     | 231/231         | 231/231 |
