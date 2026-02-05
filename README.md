@@ -52,7 +52,7 @@ The table below summarizes the current status for each variant caller:
 
 | Index Type                       | Description                                            | File Name |
 | -------------------------------: | :----------------------------------------------------- | :-------- |
-| Assemblies                       | List of all assemblies included in HPRC Release 2      | [assemblies_pre_release_v0.6.1.index.csv](https://github.com/human-pangenomics/hprc_intermediate_assembly/blob/main/data_tables/assemblies_pre_release_v0.6.1.index.csv) |
+| Assemblies                       | List of all assemblies included in HPRC Release 2      | [assemblies.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/assemblies.index.csv) |
 | HiFi Reads                       | List of all PacBio HiFi reads used in variant calling  | [hifi_reads.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/hifi_reads.index.csv)|
 | Assembly-to-Reference Alignments | List of assembly alignments to reference genomes       | [assembly_alignments.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/assembly_alignments.index.csv)|
 | HiFi-to-Reference Alignments     | List of HiFi read alignments to reference genomes      | [hifi_alignments.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/hifi_alignments.index.csv)|
