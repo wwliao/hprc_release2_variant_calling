@@ -1,6 +1,6 @@
 # Variant Calling for the HPRC Release 2
 
-This repository contains Nextflow workflows for assembly-based and HiFi-based variant calling for 231 individuals in the Human Pangenome Reference Consortium (HPRC) Release 2. It includes workflows for aligning assemblies and HiFi reads to reference genomes, as well as workflows for calling small and structural variants from these alignments using multiple tools. Additionally, [index files](#index-files) are provided for easy access to assemblies, HiFi reads, alignments, and variant callsets.
+This repository contains Nextflow workflows for assembly-based and HiFi-based variant calling for 231 individuals in the Human Pangenome Reference Consortium Release 2 (HPRC R2). It includes workflows for aligning assemblies and HiFi reads to reference genomes, as well as workflows for calling small and structural variants from these alignments using multiple tools. Additionally, [index files](#index-files) are provided for easy access to assemblies, HiFi reads, alignments, and variant callsets.
 
 ## Overview
 
@@ -11,6 +11,8 @@ Variants were then called using various tools. For structural variant (SV) calle
 - Minimum MAPQ: 5
 - Minimum read support: 3
 - Minimum SV length: 30 bp
+
+In addition to the 231 HPRC R2 individuals, we also generated variant calls for an HPRC R2–equivalent version of HG002. The HG002 sequencing data were downsampled to match the typical coverage of HPRC R2 samples and processed through the same automated assembly and polishing pipeline. Variant calling was then performed on both the resulting assembly and the downsampled HiFi reads using the same workflows as for the other samples. This callset can be used for benchmarking against the GIAB T2T-HG002 Q100 v1.1 truth set.
 
 ## Variant Callers
 
