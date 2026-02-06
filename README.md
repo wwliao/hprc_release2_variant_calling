@@ -54,7 +54,7 @@ Variant callers are grouped by input type. Most callers report SVs, some are joi
 
 - **SVIM (v2.0.0, SV)**
 
-    We modified SVIM to fix errors by replacing `scipy.linkage` with `fastcluster.linkage` and updating `legendHandles` to `legend_handles` for compatibility with newer Matplotlib versions. The modified version is available [here](https://github.com/wwliao/svim).
+    We modified SVIM to fix errors by replacing `scipy.cluster.hierarchy.linkage` with `fastcluster.linkage` and updating `legendHandles` to `legend_handles` for compatibility with newer Matplotlib versions. The modified version is available [here](https://github.com/wwliao/svim).
 
 - **SVision-pro (v2.4, SV; excluded from downstream analysis)**
 
