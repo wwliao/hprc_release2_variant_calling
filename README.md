@@ -66,7 +66,7 @@ Variant callers are grouped by input type. Most callers report SVs, some are joi
 
 | Index Type                       | Description                                            | File Name |
 | -------------------------------: | :----------------------------------------------------- | :-------- |
-| Assemblies                       | List of all assemblies included in HPRC Release 2      | [assemblies.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/assemblies.index.csv) |
+| Assemblies                       | List of all assemblies used in variant calling         | [assemblies.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/assemblies.index.csv) |
 | HiFi Reads                       | List of all PacBio HiFi reads used in variant calling  | [hifi_reads.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/hifi_reads.index.csv)|
 | Assembly-to-Reference Alignments | List of assembly alignments to reference genomes       | [assembly_alignments.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/assembly_alignments.index.csv)|
 | HiFi-to-Reference Alignments     | List of HiFi read alignments to reference genomes      | [hifi_alignments.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/hifi_alignments.index.csv)|
