@@ -52,7 +52,7 @@ Variant callers are grouped by input type. Most callers report SVs, some are joi
 - **Sniffles2 (v2.5.3, SV)**
 - **SVDSS (v2.0.0, SV)**
 
-    SVDSS currently reports only insertions and deletions. The GT field in the VCF output is unreliable, so we used [`kanpig`](https://github.com/ACEnglish/kanpig) to regenotype these variants.
+    SVDSS currently reports only insertions and deletions. The GT field in the VCF output is unreliable, so we used [kanpig](https://github.com/ACEnglish/kanpig) to regenotype these variants.
 
 - **SVIM (v2.0.0, SV)**
 
