@@ -19,6 +19,7 @@ Variant callers are grouped by input type. cuteSV and SVision-pro can operate on
 ### Assembly-based callers
 
 - cuteSV-asm (v2.1.1)
+
     We modified `diploid_calling.py` to support user-defined haplotype names. The modified version is available [here](https://github.com/wwliao/cuteSV).
 
 - dipcall (v0.3)
@@ -28,14 +29,17 @@ Variant callers are grouped by input type. cuteSV and SVision-pro can operate on
 - SVIM-asm (v1.0.3)
 
 - SVision-pro-asm (v2.4, not used in downstream analysis)
+
     The GT field in the VCF output is incorrect ([see issue](https://github.com/songbowang125/SVision-pro/issues/15)). The genotype can be inferred from the RNAMES field in INFO if needed. Because the VCF is not sequence-resolved, this caller was excluded from downstream analysis.
 
 ### HiFi-based callers
 
 - DeepVariant (v1.6.1)
+
     DeepVariant was used for small variant calling. Version 1.8.0 had a bug when used with CHM13v2 ([see issue](https://github.com/google/deepvariant/issues/912#issuecomment-2552635974)), so we used version 1.6.1 for both reference genomes to maintain consistency.
 
 - cuteSV (v2.1.1)
+
     cuteSV occasionally reports variants with a position of zero ([see issue](https://github.com/tjiangHIT/cuteSV/issues/147)). We applied a post-processing step to remove these records before sorting to avoid issues with BCFtools.
 
 - DeBreak (v1.3)
@@ -43,6 +47,7 @@ Variant callers are grouped by input type. cuteSV and SVision-pro can operate on
 - DELLY (v1.3.2)
 
 - longcallD (v0.0.4)
+
     We used `--out-bam` to generate phased BAM files, which include HP and PS tags. Since the original input BAMs (listed in [hifi_alignments.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/hifi_alignments.index.csv)) are already available in the S3 bucket, we saved only the extracted HP and PS tag information as a TSV file to reduce storage usage. If you need the phased BAMs, you can easily reconstruct them using the input BAMs and the TSV file with the provided [`restore_phased_bam.py`](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/workflows/longcalld/restore_phased_bam.py) script (requires `pysam`).
 
 - pbsv (v2.10.0)
@@ -52,12 +57,15 @@ Variant callers are grouped by input type. cuteSV and SVision-pro can operate on
 - Sniffles2 (v2.5.3)
 
 - SVDSS (v2.0.0)
+
     SVDSS currently reports only insertions and deletions. The GT field in the VCF output is unreliable, so we used [`kanpig`](https://github.com/ACEnglish/kanpig) to regenotype these variants.
 
 - SVIM (v2.0.0)
+
     We modified SVIM to fix errors by replacing `scipy.linkage` with `fastcluster.linkage` and updating `legendHandles` to `legend_handles` for compatibility with newer Matplotlib versions. The modified version is available [here](https://github.com/wwliao/svim).
 
 - SVision-pro (v2.4, not used in downstream analysis)
+
 The VCF output is not sequence-resolved, so this caller was excluded from downstream analysis.
 
 ## Index Files
