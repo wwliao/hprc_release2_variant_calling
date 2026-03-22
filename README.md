@@ -1,6 +1,6 @@
 # Variant Calling for the HPRC Release 2
 
-This repository contains Nextflow workflows for assembly-based and HiFi-based variant calling for 231 individuals in the Human Pangenome Reference Consortium Release 2 (HPRC R2). It includes workflows for aligning assemblies and HiFi reads to reference genomes, as well as workflows for calling small and structural variants from these alignments using multiple tools. Additionally, [index files](#index-files) are provided for easy access to assemblies, HiFi reads, alignments, and variant callsets.
+This repository contains Nextflow workflows for assembly-based and HiFi-based variant calling for 231 individuals in the Human Pangenome Reference Consortium Release 2 (HPRC R2). It includes workflows for aligning assemblies and HiFi reads to reference genomes, as well as workflows for calling small and structural variants from these alignments using multiple tools. Additionally, [index files](#index-files) are provided for easy access to assemblies, HiFi reads, alignments, variant callsets, and merged callsets.
 
 ## Overview
 
@@ -69,6 +69,8 @@ In addition to per-caller variant callsets, we generated **merged callsets** for
 These merged callsets provide a more comprehensive set of variants by combining evidence across methods. The detailed methodology for constructing merged callsets is described in [a separate repository](https://github.com/wwliao/hprc_release2_graph_variant_benchmarking).
 
 An index of merged callsets is provided in the [Index Files](#index-files) section.
+
+**Note**: A merged callset was not constructed for HG00272. This sample was excluded due to a likely large-scale misassembly on chromosome X and was therefore not included in the HPRC R2 pangenome graph.
 
 ## Index Files
 
