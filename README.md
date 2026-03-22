@@ -70,7 +70,7 @@ These merged callsets provide a more comprehensive set of variants by combining 
 
 An index of merged callsets is provided in the [Index Files](#index-files) section.
 
-**Note**: A merged callset was not constructed for HG00272. This sample was excluded due to a likely large-scale misassembly on chromosome X and was therefore not included in the HPRC R2 pangenome graph.
+**Note**: A merged callset was not generated for HG00272. This sample was excluded due to a likely large-scale misassembly on chromosome X and was therefore not included in the HPRC R2 pangenome graph.
 
 ## Index Files
 
