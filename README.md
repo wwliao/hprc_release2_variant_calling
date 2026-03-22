@@ -62,6 +62,14 @@ Variant callers are grouped by input type. Most callers report SVs, some are joi
 
     The VCF output is not sequence-resolved, so this caller was *excluded* from downstream analysis.
 
+## Merged Callsets
+
+In addition to per-caller variant callsets, we generated **merged callsets** for each sample by integrating results from multiple callers.
+
+These merged callsets provide a more comprehensive representation of variants by combining evidence across methods. The detailed methodology for constructing merged callsets is described in [a separate repository](https://github.com/wwliao/hprc_release2_graph_variant_benchmarking).
+
+An index of merged callsets is provided in the [Index Files](#index-files) section.
+
 ## Index Files
 
 | Index Type                       | Description                                            | File Name |
@@ -71,6 +79,7 @@ Variant callers are grouped by input type. Most callers report SVs, some are joi
 | Assembly-to-Reference Alignments | List of assembly alignments to reference genomes       | [assembly_alignments.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/assembly_alignments.index.csv)|
 | HiFi-to-Reference Alignments     | List of HiFi read alignments to reference genomes      | [hifi_alignments.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/hifi_alignments.index.csv)|
 | Variant Callsets                 | List of all variant callsets generated for each sample | [variant_callsets.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/variant_callsets.index.csv)|
+| Merged Callsets                  | List of merged variant callsets for each sample        | [merged_callsets.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/merged_callsets.index.csv)|
 
 ### How to Download Files
 
