@@ -16,7 +16,7 @@ In addition to the 231 HPRC R2 individuals, we also generated variant calls for 
 
 ## Variant Callers
 
-Variant callers are grouped by input type. Most callers report SVs, some are joint callers that report both small variants and SVs, and DeepVariant reports only small variants. cuteSV and SVision-pro can operate on both assemblies and HiFi reads; we use the suffix "-asm" for assembly-based runs.
+Variant callers are grouped by input type. Most callers report SVs, some are joint callers that report both small variants and SVs, and DeepVariant reports only small variants. cuteSV can operate on both assemblies and HiFi reads; we use the suffix "-asm" for assembly-based runs.
 
 ### Assembly-based callers
 
@@ -26,7 +26,6 @@ Variant callers are grouped by input type. Most callers report SVs, some are joi
 | PAV             | v2.4.6  | joint | Uses Minimap2 instead of Winnowmap |
 | cuteSV-asm      | v2.1.1  | SV    | Modified implementation            |
 | SVIM-asm        | v1.0.3  | SV    |                                    |
-| SVision-pro-asm | v2.4    | SV    | Excluded from downstream analysis  |
 
 ### HiFi-based callers
 
@@ -42,13 +41,10 @@ Variant callers are grouped by input type. Most callers report SVs, some are joi
 | Sniffles2     | v2.5.3  | SV    |                                   |
 | SVDSS         | v2.0.0  | SV    | Regenotyped                       |
 | SVIM          | v2.0.0  | SV    | Modified implementation           |
-| SVision-pro   | v2.4    | SV    | Excluded from downstream analysis |
 
 ### Notes
 
 - **cuteSV-asm**: We modified `diploid_calling.py` to support user-defined haplotype names. The modified version is available [here](https://github.com/wwliao/cuteSV).
-
-- **SVision-pro-asm**: The GT field in the VCF output is incorrect ([see issue](https://github.com/songbowang125/SVision-pro/issues/15)). The genotype can be inferred from the RNAMES field in INFO if needed. Because the VCF is not sequence-resolved, this caller was *excluded* from downstream analysis.
 
 - **longcallD**: We used `--out-bam` to generate phased BAM files (HP and PS tags). Since the original input BAMs (listed in [hifi_alignments.index.csv](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/hifi_alignments.index.csv)) are already available in the S3 bucket, we stored only extracted HP/PS tags in TSV format to reduce storage usage. Phased BAMs can be reconstructed using [`restore_phased_bam.py`](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/workflows/longcalld/restore_phased_bam.py) (requires `pysam`).
 
@@ -59,8 +55,6 @@ Variant callers are grouped by input type. Most callers report SVs, some are joi
 - **SVDSS**: Reports only insertions and deletions. The GT field is unreliable, so we used [kanpig](https://github.com/ACEnglish/kanpig) for regenotyping.
 
 - **SVIM**: Modified by replacing `scipy.cluster.hierarchy.linkage` with `fastcluster.linkage` and updating `legendHandles` to `legend_handles` for compatibility with newer Matplotlib versions. The modified version is available [here](https://github.com/wwliao/svim).
-
-- **SVision-pro**: The VCF output is not sequence-resolved and was *excluded* from downstream analysis.
 
 ## Merged Callsets
 
