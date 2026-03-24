@@ -60,11 +60,13 @@ Variant callers are grouped by input type. Most callers report SVs, some are joi
 
 In addition to per-caller variant callsets, we generated **merged callsets** for each sample by integrating results from multiple callers.
 
-These merged callsets provide a more comprehensive set of variants by combining evidence across methods. The detailed methodology for constructing merged callsets is described in [a separate repository](https://github.com/wwliao/hprc_release2_graph_variant_benchmarking).
+These merged callsets provide a more comprehensive and reliable set of variants by combining evidence across methods. The detailed methodology for constructing merged callsets, including their use in benchmarking, is described in [a separate repository](https://github.com/wwliao/hprc_release2_graph_variant_benchmarking).
+
+Merged callsets were generated for *autosomal chromosomes only*, as many callers do not account for sex when calling variants on sex chromosomes, which can result in inaccurate genotypes.
 
 An index of merged callsets is provided in the [Index Files](#index-files) section.
 
-**Note**: A merged callset was not generated for HG00272. This sample was excluded due to a likely large-scale misassembly on chromosome X and was therefore not included in the HPRC R2 pangenome graph.
+**Note**: A merged callset was not generated for HG00272, as this sample was not included in the HPRC R2 pangenome graph due to a likely large-scale misassembly on chromosome X.
 
 ## Index Files
 
