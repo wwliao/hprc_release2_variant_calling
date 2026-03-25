@@ -2,6 +2,14 @@
 
 This repository contains Nextflow workflows for assembly-based and HiFi-based variant calling for 231 individuals in the Human Pangenome Reference Consortium Release 2 (HPRC R2). It includes workflows for aligning assemblies and HiFi reads to reference genomes, as well as workflows for calling small and structural variants from these alignments using multiple tools. Additionally, [index files](#index-files) are provided for easy access to assemblies, HiFi reads, alignments, variant callsets, and merged callsets.
 
+## Companion Repository
+
+Merged callsets are provided via this repository (see the [merged callsets index](https://github.com/wwliao/hprc_release2_variant_calling/blob/main/index_files/merged_callsets.index.csv)), while the workflows used to construct them are described in the companion repository:
+
+https://github.com/wwliao/hprc_release2_graph_variant_benchmarking
+
+That repository describes the workflows used to construct these merged callsets, derive joint ground truth VCFs, and benchmark variants derived from the HPRC R2 pangenome graph.
+
 ## Overview
 
 We used **Winnowmap (v2.03)** to align assemblies and HiFi reads to two reference genomes: **GRCh38\_no\_alt** and **CHM13v2**. However, for **PAV**, we used **Minimap2 (v2.26)** instead of Winnowmap. For HiFi reads with CpG methylation information (MM and ML tags), we retained the methylation data in the aligned BAM files.
