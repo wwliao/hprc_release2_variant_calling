@@ -2,14 +2,6 @@
 
 This repository contains Nextflow workflows for assembly-based and HiFi-based variant calling for 231 individuals in the Human Pangenome Reference Consortium Release 2 (HPRC R2). It includes workflows for aligning assemblies and HiFi reads to reference genomes, as well as workflows for calling small and structural variants from these alignments using multiple tools. Additionally, [index files](#index-files) are provided for easy access to assemblies, HiFi reads, alignments, variant callsets, and merged callsets.
 
-## Companion Repository
-
-Merged callsets (see [Merged Callsets](#merged-callsets) section) are provided via this repository, while the workflows used to construct them are described in the companion repository:
-
-https://github.com/wwliao/hprc_release2_graph_variant_benchmarking
-
-That repository describes the workflows used to construct these merged callsets, derive joint ground truth VCFs, and benchmark variants derived from the HPRC R2 pangenome graph.
-
 ## Overview
 
 We used **Winnowmap (v2.03)** to align assemblies and HiFi reads to two reference genomes: **GRCh38\_no\_alt** and **CHM13v2**. However, for **PAV**, we used **Minimap2 (v2.26)** instead of Winnowmap. For HiFi reads with CpG methylation information (MM and ML tags), we retained the methylation data in the aligned BAM files.
@@ -68,7 +60,7 @@ Variant callers are grouped by input type. Most callers report SVs, some are joi
 
 In addition to per-caller variant callsets, we generated **merged callsets** for each sample by integrating results from multiple callers.
 
-These merged callsets provide a more comprehensive set of variants by combining evidence across methods. The detailed methodology for constructing merged callsets, including their use in benchmarking, is described in [the companion repository](https://github.com/wwliao/hprc_release2_graph_variant_benchmarking).
+These merged callsets provide a more comprehensive set of variants by combining evidence across methods. The detailed methodology for constructing merged callsets, including their use in benchmarking, is described in the [graph variant benchmarking repository](https://github.com/wwliao/hprc_release2_graph_variant_benchmarking).
 
 Merged callsets were generated for *autosomal chromosomes only*, as many callers do not account for sex when calling variants on sex chromosomes, which can result in inaccurate genotypes.
 
