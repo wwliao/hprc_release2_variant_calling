@@ -4,7 +4,7 @@ This repository contains Nextflow workflows for assembly-based and HiFi-based va
 
 ## Overview
 
-We used **Winnowmap (v2.03)** to align assemblies and HiFi reads to two reference genomes: **GRCh38\_no\_alt** and **CHM13v2**. However, for **PAV**, we used **Minimap2 (v2.26)** instead of Winnowmap. For HiFi reads with CpG methylation information (MM and ML tags), we retained the methylation data in the aligned BAM files.
+We used Winnowmap2 (v2.03) to align assemblies and HiFi reads to two reference genomes: GRCh38 and CHM13. However, for PAV, we used minimap2 (v2.26) instead of Winnowmap2. For HiFi reads with CpG methylation information (MM and ML tags), we retained the methylation data in the aligned BAM files.
 
 Variants were then called using various tools. For structural variant (SV) callers, we relaxed the calling criteria to maximize recall by setting the following parameters (where applicable):
 
@@ -20,12 +20,12 @@ Variant callers are grouped by input type. Most callers report SVs, some are joi
 
 ### Assembly-based callers
 
-| Caller          | Version | Type  | Notes                              |
-|----------------:|:-------:|:-----:|:-----------------------------------|
-| dipcall         | v0.3    | joint |                                    |
-| PAV             | v2.4.6  | joint | Uses Minimap2 instead of Winnowmap |
-| cuteSV-asm      | v2.1.1  | SV    | Modified implementation            |
-| SVIM-asm        | v1.0.3  | SV    |                                    |
+| Caller          | Version | Type  | Notes                               |
+|----------------:|:-------:|:-----:|:------------------------------------|
+| dipcall         | v0.3    | joint |                                     |
+| PAV             | v2.4.6  | joint | Uses minimap2 instead of Winnowmap2 |
+| cuteSV-asm      | v2.1.1  | SV    | Modified implementation             |
+| SVIM-asm        | v1.0.3  | SV    |                                     |
 
 ### HiFi-based callers
 
