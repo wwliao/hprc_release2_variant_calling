@@ -58,7 +58,7 @@ Variant callers are grouped by input type. Most callers report SVs, some are joi
 
 ## Merged Callsets
 
-In addition to per-caller variant callsets, we generated **merged callsets** for each sample by integrating results from multiple callers. These merged callsets provide a more comprehensive set of variants by combining evidence across methods. The detailed methodology for constructing merged callsets, including their use in benchmarking, is described in the [graph variant benchmarking repository](https://github.com/wwliao/hprc_release2_graph_variant_benchmarking).
+In addition to per-caller variant callsets, we generated merged callsets for each sample by integrating results from multiple callers. These merged callsets provide a more comprehensive set of variants by combining evidence across methods. The detailed methodology for constructing merged callsets, including their use in benchmarking, is described in the [graph variant benchmarking repository](https://github.com/wwliao/hprc_release2_graph_variant_benchmarking).
 
 Merged callsets were generated for *autosomal chromosomes only*, as many callers do not account for sex when calling variants on sex chromosomes, which can result in inaccurate genotypes. Variants are further restricted to confident genomic regions defined by dipcall BED files for each sample.
 
@@ -93,15 +93,15 @@ We provide two reference genome packages: [`GRCh38_no_alt.tar.gz`](https://s3-us
 
 After extracting `GRCh38_no_alt.tar.gz` or `CHM13v2.tar.gz`, you will find the following files:
 
-- **`<reference>.fa`**: The FASTA file containing the reference genome.
-- **`<reference>.fa.fai`**: Index file for the FASTA reference genome.
-- **`<reference>.fmd`**: FMD index file for the FASTA reference genome.
-- **`<reference>.PAR.bed`**: BED file specifying pseudo-autosomal regions (PARs).
-- **`<reference>.expected_cn.XX.bed`**: BED file for expected copy numbers in female samples.
-- **`<reference>.expected_cn.XY.bed`**: BED file for expected copy numbers in male samples.
-- **`<reference>.TRF.bed`**: BED file annotating tandem repeats.
-- **`repetitive_k15.txt`**: Text file listing repetitive k-mers (k=15) pre-computed using [meryl](https://github.com/marbl/meryl).
-- **`repetitive_k19.txt`**: Text file listing repetitive k-mers (k=19) pre-computed using [meryl](https://github.com/marbl/meryl).
+- `<reference>.fa`: The FASTA file containing the reference genome.
+- `<reference>.fa.fai`: Index file for the FASTA reference genome.
+- `<reference>.fmd`: FMD index file for the FASTA reference genome.
+- `<reference>.PAR.bed`: BED file specifying pseudo-autosomal regions (PARs).
+- `<reference>.expected_cn.XX.bed`: BED file for expected copy numbers in female samples.
+- `<reference>.expected_cn.XY.bed`: BED file for expected copy numbers in male samples.
+- `<reference>.TRF.bed`: BED file annotating tandem repeats.
+- `repetitive_k15.txt`: Text file listing repetitive k-mers (k=15) pre-computed using meryl.
+- `repetitive_k19.txt`: Text file listing repetitive k-mers (k=19) pre-computed using meryl.
 
 Replace `<reference>` with `GRCh38_no_alt` or `CHM13v2`, depending on the genome package you are using.
 
