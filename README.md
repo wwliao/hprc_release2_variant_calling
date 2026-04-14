@@ -6,7 +6,7 @@ This repository contains Nextflow workflows for assembly-based and HiFi-based va
 
 We used Winnowmap2 (v2.03) to align assemblies and HiFi reads to two reference genomes: GRCh38 and CHM13. However, for PAV, we used minimap2 (v2.26) instead of Winnowmap2. For HiFi reads with CpG methylation information (MM and ML tags), we retained the methylation data in the aligned BAM files.
 
-Variants were then called using various tools. For structural variant (SV) callers, we relaxed the calling criteria to maximize recall by setting the following parameters (where applicable):
+Variants were then called using various tools. For structural variant (SV) callers, we relaxed the calling criteria to increase sensitivity by setting the following parameters (where applicable):
 
 - Minimum MAPQ: 5
 - Minimum read support: 3
